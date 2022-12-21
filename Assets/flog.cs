@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class monster : MonoBehaviour
+public class flog : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,13 +14,14 @@ public class monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("game");
-        }
+        
     }
-    void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("clear");
+        if (collision.tag == "Player")
+        {
+            SceneManager.LoadScene("clear");
+            
+        }
     }
 }
