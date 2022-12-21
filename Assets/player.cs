@@ -9,6 +9,7 @@ public class player : MonoBehaviour
     public float jumpForce = 680.0f;
    public float maxWalkSpeed = 2.0f;
    public float walkForce = 30.0f;
+    public GameObject gamemaster;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +45,18 @@ public class player : MonoBehaviour
         {
             animator.speed = 1.0f;
         }
+        
+        
+        
     }
-}
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.tag == "tak")
+        {
+
+            gamemaster.GetComponent<game>().HPhit();
+        }
+    
+    }
+ }

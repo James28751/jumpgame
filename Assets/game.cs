@@ -25,12 +25,11 @@ public class game : MonoBehaviour
     public void HPhit()
     {
         HP.GetComponent<Image>().fillAmount -= 0.1f;
-
     }
 
     void arr()
     {
-        int a = Random.Range(-9, 9);
+        int a = Random.Range(-3, 3);
         Instantiate(arrow, new Vector3(a, 5, 0), Quaternion.identity);
     }
 
