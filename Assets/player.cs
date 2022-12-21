@@ -21,6 +21,7 @@ public class player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetTrigger("JumpTrigger");
             rigid2D.AddForce(transform.up * jumpForce);
         }
         int key = 0;
